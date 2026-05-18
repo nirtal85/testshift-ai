@@ -1,15 +1,15 @@
 <div align="center">
 
 # TestShift AI
-### Public Skill Patterns for Agentic QA and Governed Automation
+### Public Skill Patterns and Reading Map for Agentic QA
 
 [![GitHub stars](https://img.shields.io/github/stars/nirtal85/testshift-ai?style=social)](https://github.com/nirtal85/testshift-ai/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![AI Skills](https://img.shields.io/badge/AI-Skill_Patterns-8b5cf6)
 ![Agentic QA](https://img.shields.io/badge/Agentic_QA-Governed-22c55e)
-![Test Architecture](https://img.shields.io/badge/Test_Architecture-Quality_Gates-3b82f6)
+![Quality Gates](https://img.shields.io/badge/Quality_Gates-Deterministic-3b82f6)
 
-[Read The Article](https://www.testshift.dev/posts/from-prompts-to-skills-agentic-ai-dev-qa/) • [Browse Skills](skills/bug-scout/SKILL.md) • [Visit TestShift](https://www.testshift.dev)
+[Browse Skills](skills/bug-scout/SKILL.md) • [AI Reading Map](#ai-reading-map) • [Visit TestShift](https://www.test-shift.com/)
 
 </div>
 
@@ -17,142 +17,85 @@
 
 ## About The Project
 
-**TestShift AI** is a public library of sanitized AI Skill patterns for modern Quality Engineering.
+**TestShift AI** is the public home for my AI-native Quality Engineering patterns: agentic QA, governed automation, RCA triage, Skill patterns, and deterministic Quality Gates.
 
-The goal is simple: turn agentic AI from loose prompting into governed engineering workflows. These patterns help AI agents investigate failures, collect evidence, classify uncertainty, and produce useful proposals without silently mutating systems or flooding teams with noisy tickets.
-
-This repository starts with **Bug Scout**, a Skill pattern for CI failure investigation and RCA triage.
+The goal is not to publish private workplace workflows. The goal is to publish sanitized patterns that teams can adapt safely.
 
 > Code is cheap. Context is King. Skills are the new currency.
 
 ---
 
-## What Is a Skill Pattern?
-
-A **Skill pattern** is a reusable behavioral contract for an AI agent.
-
-It defines:
-
-| Contract Area | What It Controls |
-|---|---|
-| Evidence | Which artifacts, logs, reports, timestamps, and code changes the agent must inspect |
-| Boundaries | What the agent may read, what it may write, and where human approval is required |
-| Classification | How to separate product defects, stale automation, flaky infrastructure, and weak signals |
-| Output | The exact format of a concise, evidence-backed proposal |
-| Governance | Confidence gates, read-only defaults, and explicit approval before write actions |
-
-Prompts ask the model to behave. Skills constrain the system so behavior becomes repeatable.
-
----
-
 ## Available Skills
 
-| Skill | Purpose | Status |
+| Skill | Purpose | Human Guide | Related Article |
+|---|---|---|---|
+| [`bug-scout`](skills/bug-scout/SKILL.md) | Investigates CI/test automation failures and proposes evidence-backed issues only when confidence is high enough. | [`README`](skills/bug-scout/README.md) | [Bug Scout](https://www.test-shift.com/posts/from-prompts-to-skills-agentic-ai-dev-qa/) |
+
+---
+
+## AI Reading Map
+
+These articles form the TestShift AI architecture track: from why AI changes quality engineering, through agentic workflows, to governed Skills and deterministic gates.
+
+| Theme | Article | Why It Matters |
 |---|---|---|
-| [`bug-scout`](skills/bug-scout/SKILL.md) | Investigate CI and test automation failures, classify the signal, and propose evidence-backed issues only when confidence is high enough. | Available |
+| Skills and Agentic QA | [Bug Scout: From Prompts to Skills in Agentic QA](https://www.test-shift.com/posts/from-prompts-to-skills-agentic-ai-dev-qa/) | Defines Skills as governed contracts and shows how a CI failure becomes evidence-backed RCA. |
+| Context Architecture | [Code is Cheap, Context is King](https://www.test-shift.com/posts/code-is-cheap-context-is-king/) | Explains why AI-generated code is easy, but context and judgment remain scarce. |
+| Autonomous Agents | [The Agentic Revolution](https://www.test-shift.com/posts/the-rise-of-autonomous-ai-agents-in-playwright/) | Frames test automation as the first practical frontier for autonomous AI agents. |
+| Agentic CI/CD | [GitHub Agentic Workflow](https://www.test-shift.com/posts/github-agentic-workflow/) | Shows how to place AI agents beside CI/CD without giving them release authority. |
+| Browser Control Plane | [WebMCP](https://www.test-shift.com/posts/webmcp-the-missing-control-plane-between-agentic-ai-and-deterministic-test-automation/) | Proposes a cleaner control surface between agentic AI and deterministic browser automation. |
+| Token Economics | [The Token War: Playwright CLI vs MCP](https://www.test-shift.com/posts/the-token-war-playwright-cli-vs-mcp/) | Breaks down token bloat, latency, and why context efficiency matters in AI-driven testing. |
+| AI Governance | [The SaaS Apocalypse is Here](https://www.test-shift.com/posts/testshift-surviving-the-saas-apocalypse/) | Argues that AI creates infinite code inflation, making trust and governance the real scarce resources. |
+| AI-Assisted Migration | [The Enterprise Blueprint for Migrating from Selenium to Playwright](https://www.test-shift.com/posts/the-enterprise-blueprint-for-migrating-from-selenium-to-playwright/) | Treats migration as an operating model change, including how to use AI without losing control. |
+| AI-Native Test Architecture | [From Open Source to Industry Sponsorship](https://www.test-shift.com/posts/from-open-source-to-enterprise-sponsorship-the-testshift-journey-with-browserstack/) | Connects open source test architecture, cloud scale, and the future of AI-native testing. |
+| Industry Shift | [From Selenium to Playwright](https://www.test-shift.com/posts/from-selenium-to-playwright-a-data-driven-look-at-the-shifting-landscape-of-test-automation/) | Uses ecosystem data to show the industry shift toward modern automation increasingly assisted by AI. |
 
 ---
 
-## Bug Scout
+## Foundation Reading
 
-**Bug Scout** turns a red CI signal into a governed RCA proposal.
+These are not only about AI, but they are the deterministic foundation that makes AI safe in engineering systems.
 
-It is designed for cases where an automation failure may represent a real product defect, but the evidence must be classified before a ticket is opened.
-
-### What It Does
-
-- Extracts failure context from test titles, file paths, reports, traces, screenshots, logs, and CI metadata.
-- Classifies the failure as product defect, stale automation, flaky infrastructure, or insufficient evidence.
-- Searches recent code changes and historical issues when RCA is requested.
-- Ranks suspects by confidence.
-- Produces a lean issue proposal with only high-confidence RCA candidates.
-- Requires explicit human approval before any write action.
-
-### What It Avoids
-
-- Opening weak tickets.
-- Treating correlation as confirmed causation.
-- Leaking raw investigator notes into issue bodies.
-- Including Medium/Low RCA guesses in final proposals.
-- Weakening tests to hide product defects.
-- Exposing private repository names, internal Jira projects, production logs, or company-specific workflows.
+| Theme | Article | Why It Matters |
+|---|---|---|
+| Quality Gates | [The Real Quality Gate](https://www.test-shift.com/posts/the-real-quality-gate-a-paradigm-shift/) | Defines why deterministic environments and gates must own release authority. |
+| Framework Governance | [Guarding the Guards](https://www.test-shift.com/posts/building-a-quality-gate-for-your-automation-project/) | Shows how to build a pre-merge gate for the automation framework itself. |
+| Operational Maturity | [Firefighting vs. Quality Gates](https://www.test-shift.com/posts/from-firefighting-to-quality-gates/) | Explains why endless hotfix loops are a governance failure, not a testing failure. |
+| Reporting Infrastructure | [Allure 3 and Quality Gate Architecture](https://www.test-shift.com/posts/allure-3-leave-the-swamp-ride-the-dragon/) | Treats reporting as evidence infrastructure, not decoration. |
 
 ---
 
-## Governance Model
+## What Belongs Here
 
-Bug Scout follows a conservative workflow:
+This repository is for public, sanitized AI patterns such as:
 
-| Stage | Default Behavior |
-|---|---|
-| Evidence collection | Read-only |
-| Failure classification | Required before drafting |
-| RCA suspect ranking | High / Medium / Low internally |
-| Ticket proposal | High-confidence suspects only |
-| Jira/GitHub creation | Human approval required |
-| Product fix proposal | Draft/hypothesis only |
+- Skill patterns for agentic QA.
+- RCA triage workflows.
+- CI failure investigation policies.
+- Quality Gate governance templates.
+- Human-in-the-loop automation patterns.
 
-This is the difference between agentic assistance and uncontrolled automation.
+This repository should not include:
 
----
-
-## How To Use
-
-1. Open [`skills/bug-scout/SKILL.md`](skills/bug-scout/SKILL.md).
-2. Adapt the placeholders to your own engineering environment.
-3. Replace generic references such as `ORG/REPO`, `ISSUE-KEY`, and artifact links with your own safe conventions.
-4. Keep sensitive implementation details private.
-5. Start with read-only integrations before enabling ticket or pull request creation.
-
-For Codex-style Skill usage, copy the Skill folder into your local skills directory:
-
-```bash
-skills/bug-scout/
-  SKILL.md
-```
-
-Then invoke it when triaging CI failures, flaky automation signals, or automation-found product bugs.
+- private repository names
+- internal Jira projects
+- proprietary domain vocabulary
+- production logs
+- company-specific workflow details
+- real customer, user, provider, or employee data
 
 ---
 
-## Key Concepts
+## Principles
 
-| Concept | Meaning |
-|---|---|
-| Agentic QA | AI-assisted quality workflows where agents investigate evidence, not just summarize failures |
-| RCA triage | Root Cause Analysis that correlates failure timing, artifacts, historical issues, and recent code changes |
-| Quality Gate | A deterministic control point that decides whether evidence is strong enough to proceed |
-| Human-in-the-loop | Required approval before creating tickets, changing code, or opening PRs |
-| Contextual IP | Organization-specific judgment encoded as reusable agent instructions and guardrails |
+Each public pattern should:
 
----
-
-## Repository Structure
-
-```text
-testshift-ai/
-  README.md
-  LICENSE
-  skills/
-    bug-scout/
-      SKILL.md
-```
-
-The repository is intentionally small. Each Skill should stay focused and portable. Extra examples, docs, and eval suites can be added later only when they earn their weight.
-
----
-
-## Related Reading
-
-This repository implements the ideas discussed in the following TestShift article:
-
-- [Bug Scout: From Prompts to Skills in Agentic QA](https://www.testshift.dev/posts/from-prompts-to-skills-agentic-ai-dev-qa/)
-
-Related TestShift architecture essays:
-
-- [Code is Cheap, Context is King](https://www.testshift.dev/posts/code-is-cheap-context-is-king/)
-- [The Rise of Autonomous AI Agents in Playwright](https://www.testshift.dev/posts/the-rise-of-autonomous-ai-agents-in-playwright/)
-- [The Real Quality Gate](https://www.testshift.dev/posts/the-real-quality-gate-a-paradigm-shift/)
+- collect evidence before producing conclusions
+- classify uncertainty explicitly
+- prefer read-only investigation by default
+- require human approval before write actions
+- suppress noisy Medium/Low RCA claims from final tickets
+- avoid weakening tests to hide product defects
 
 ---
 
@@ -166,10 +109,10 @@ This project is licensed under the [MIT License](LICENSE).
 
 Found this useful?
 
-Star the repo, adapt the pattern, and build safer AI-native quality workflows.
+Star the repo, adapt the patterns, and build safer AI-native quality workflows.
 
 <br />
 
-[Visit TestShift for more architectural insights](https://www.testshift.dev)
+[Visit TestShift for more architectural insights](https://www.test-shift.com/)
 
 </div>
