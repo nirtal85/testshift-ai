@@ -71,12 +71,13 @@ This project is licensed under the [MIT License](LICENSE).
 
 <div align="center">
 
-Found this useful?
+Found this project useful?
+If these AI-native QA patterns helped you solve a problem or save time, consider supporting the work!
 
-Star the repo, adapt the patterns, and build safer AI-native quality workflows.
+<a href="https://www.buymeacoffee.com/nirtal"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="60" alt="Buy Me A Coffee" /> </a>
 
 <br />
 
-[Visit TestShift for more architectural insights](https://www.test-shift.com/)
+[Visit TestShift.com for more Architectural Insights](https://www.test-shift.com/)
 
 </div>
