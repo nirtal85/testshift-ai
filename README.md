@@ -9,7 +9,7 @@
 ![Agentic QA](https://img.shields.io/badge/Agentic_QA-Governed-22c55e)
 ![Quality Gates](https://img.shields.io/badge/Quality_Gates-Deterministic-3b82f6)
 
-[Browse Skills](skills/bug-scout/SKILL.md) • [AI Reading Map](#ai-reading-map) • [Visit TestShift](https://www.test-shift.com/)
+[Browse Skills](skills/) • [AI Reading Map](#ai-reading-map) • [Visit TestShift](https://www.test-shift.com/)
 
 </div>
 
