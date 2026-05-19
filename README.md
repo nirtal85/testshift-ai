@@ -3,8 +3,8 @@
 # TestShift AI
 ### Public Skill Patterns and Reading Map for Agentic QA
 
-[![GitHub stars](https://img.shields.io/github/stars/nirtal85/testshift-ai?style=social)](https://github.com/nirtal85/testshift-ai/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Twitter Follow](https://img.shields.io/twitter/follow/NirTal2?style=social)](https://twitter.com/NirTal2)
+[![YouTube](https://img.shields.io/youtube/channel/subscribers/UCQjS-eoKl0a1nuP_dvpLsjQ?style=social)](https://www.youtube.com/channel/UCQjS-eoKl0a1nuP_dvpLsjQ)
 ![AI Skills](https://img.shields.io/badge/AI-Skill_Patterns-8b5cf6)
 ![Agentic QA](https://img.shields.io/badge/Agentic_QA-Governed-22c55e)
 ![Quality Gates](https://img.shields.io/badge/Quality_Gates-Deterministic-3b82f6)
