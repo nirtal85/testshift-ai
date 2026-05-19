@@ -17,7 +17,7 @@
 
 ## About The Project
 
-**TestShift AI** is the public home for my AI-native Quality Engineering patterns: agentic QA, governed automation, RCA triage, Skill patterns, and deterministic Quality Gates.
+**TestShift AI** is the public home for my AI-native Quality Engineering patterns: agentic QA, governed automation, RCA triage, CI failure investigation, Skill patterns, human-in-the-loop workflows, and deterministic Quality Gates.
 
 > Code is cheap. Context is King. Skills are the new currency.
 
@@ -60,18 +60,6 @@ These are not only about AI, but they are the deterministic foundation that make
 | Framework Governance | [Guarding the Guards](https://www.test-shift.com/posts/building-a-quality-gate-for-your-automation-project/) | Shows how to build a pre-merge gate for the automation framework itself. |
 | Operational Maturity | [Firefighting vs. Quality Gates](https://www.test-shift.com/posts/from-firefighting-to-quality-gates/) | Explains why endless hotfix loops are a governance failure, not a testing failure. |
 | Reporting Infrastructure | [Allure 3 and Quality Gate Architecture](https://www.test-shift.com/posts/allure-3-leave-the-swamp-ride-the-dragon/) | Treats reporting as evidence infrastructure, not decoration. |
-
----
-
-## What Belongs Here
-
-This repository is for public AI patterns such as:
-
-- Skill patterns for agentic QA.
-- RCA triage workflows.
-- CI failure investigation policies.
-- Quality Gate governance templates.
-- Human-in-the-loop automation patterns.
 
 ---
 
