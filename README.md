@@ -19,8 +19,6 @@
 
 **TestShift AI** is the public home for my AI-native Quality Engineering patterns: agentic QA, governed automation, RCA triage, Skill patterns, and deterministic Quality Gates.
 
-The goal is not to publish private workplace workflows. The goal is to publish sanitized patterns that teams can adapt safely.
-
 > Code is cheap. Context is King. Skills are the new currency.
 
 ---
@@ -67,35 +65,13 @@ These are not only about AI, but they are the deterministic foundation that make
 
 ## What Belongs Here
 
-This repository is for public, sanitized AI patterns such as:
+This repository is for public AI patterns such as:
 
 - Skill patterns for agentic QA.
 - RCA triage workflows.
 - CI failure investigation policies.
 - Quality Gate governance templates.
 - Human-in-the-loop automation patterns.
-
-This repository should not include:
-
-- private repository names
-- internal Jira projects
-- proprietary domain vocabulary
-- production logs
-- company-specific workflow details
-- real customer, user, provider, or employee data
-
----
-
-## Principles
-
-Each public pattern should:
-
-- collect evidence before producing conclusions
-- classify uncertainty explicitly
-- prefer read-only investigation by default
-- require human approval before write actions
-- suppress noisy Medium/Low RCA claims from final tickets
-- avoid weakening tests to hide product defects
 
 ---
 
