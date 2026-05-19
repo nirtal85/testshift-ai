@@ -1,5 +1,7 @@
 <div align="center">
 
+<img height="96" src="assets/testshift-icon.svg" alt="TestShift logo"/>
+
 # TestShift AI
 ### Public Skill Patterns and Reading Map for Agentic QA
 
