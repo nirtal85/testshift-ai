@@ -63,12 +63,6 @@ These are not only about AI, but they are the deterministic foundation that make
 
 ---
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
 <div align="center">
 
 Found this project useful?
